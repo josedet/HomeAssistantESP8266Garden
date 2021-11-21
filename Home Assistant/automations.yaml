@@ -1,0 +1,32 @@
+- id: '1600534145395'
+  alias: ActivarRegar
+  description: ''
+  trigger:
+  - at: '13:00:00'
+    platform: time
+  condition: 
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - thu
+    - sat
+  action:
+  - entity_id: switch.electrovalvula
+    service: switch.turn_on
+- id: '1600534199177'
+  alias: Desactivar Regar
+  description: ''
+  trigger:
+  - at: '13:10:00'
+    platform: time
+  condition: 
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - thu
+    - sat
+  action:
+  - entity_id: switch.electrovalvula
+    service: switch.turn_off
